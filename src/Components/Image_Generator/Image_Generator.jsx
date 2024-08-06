@@ -21,12 +21,13 @@ function Image_Generator() {
     setLoading(true);
 
     const api_key = import.meta.env.API_KEY;
+    const SEC = import.meta.env.SECRET;
      const response = await fetch(
       "https://api.openai.com/v1/images/generations",
       {
         method:"POST",
         headers:{
-          "Content-Type":"application/json",
+          "Content-Type":`${SEC}`,
           Authorization: `Bearer ${api_key}`,
 
           "User-Agent":"Chrome"
