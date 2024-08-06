@@ -21,12 +21,12 @@ function Image_Generator() {
     setLoading(true);
 
      const response = await fetch(
-      "https://api.openai.com/v1/images/generations",
+      "Image Generate Api",
       {
         method:"POST",
         headers:{
           "Content-Type":"application/json",
-          Authorization: "Bearer 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",
+          Authorization: "Bearer ${Open Ai Key}",
 
           "User-Agent":"Chrome"
         },
