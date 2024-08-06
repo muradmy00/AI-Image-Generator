@@ -9,7 +9,7 @@ function Image_Generator() {
 
   const [loading,setLoading] = useState(false);
 
-
+ 
    let inputRef = useRef(null);
 
    const imageGenerate = async () =>
@@ -20,13 +20,14 @@ function Image_Generator() {
 
     setLoading(true);
 
-     /*const response = await fetch(
-      "Image Generate Api",
+    const api_key = import.meta.env.API_KEY;
+     const response = await fetch(
+      "https://api.openai.com/v1/images/generations",
       {
         method:"POST",
         headers:{
           "Content-Type":"application/json",
-          Authorization: "Bearer ${Open Ai Key}",
+          Authorization: `Bearer ${api_key}`,
 
           "User-Agent":"Chrome"
         },
@@ -37,12 +38,12 @@ function Image_Generator() {
         }),
 
       }
-     );*/
+     );
 
-     //let data = await response.json();
+     let data = await response.json();
 
-     //let data_array = data.data;
-     setImage_url(/*data_array[0].url*/);
+     let data_array = data.data;
+     setImage_url(data_array[0].url);
      
      setLoading(false);
 
