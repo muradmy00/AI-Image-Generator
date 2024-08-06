@@ -26,7 +26,7 @@ function Image_Generator() {
         method:"POST",
         headers:{
           "Content-Type":"application/json",
-          Authorization: "Bearer ${Open Ai Key}",
+          //Authorization: "Bearer ${Open Ai Key}",
 
           "User-Agent":"Chrome"
         },
