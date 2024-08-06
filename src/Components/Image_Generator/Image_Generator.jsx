@@ -20,13 +20,13 @@ function Image_Generator() {
 
     setLoading(true);
 
-     const response = await fetch(
+     /*const response = await fetch(
       "Image Generate Api",
       {
         method:"POST",
         headers:{
           "Content-Type":"application/json",
-          //Authorization: "Bearer ${Open Ai Key}",
+          Authorization: "Bearer ${Open Ai Key}",
 
           "User-Agent":"Chrome"
         },
@@ -37,12 +37,12 @@ function Image_Generator() {
         }),
 
       }
-     );
+     );*/
 
-     let data = await response.json();
+     //let data = await response.json();
 
-     let data_array = data.data;
-     setImage_url(data_array[0].url);
+     //let data_array = data.data;
+     setImage_url(/*data_array[0].url*/);
      
      setLoading(false);
 
