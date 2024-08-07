@@ -17,7 +17,7 @@ function Image_Generator() {
     if(inputRef.current.value === ""){
       return 0;
     }
-
+    
     setLoading(true);
 
     setImage_url();
