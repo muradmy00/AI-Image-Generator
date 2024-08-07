@@ -20,31 +20,7 @@ function Image_Generator() {
 
     setLoading(true);
 
-    const api_key = import.meta.env.API_KEY;
-    const SEC = import.meta.env.SECRET;
-     const response = await fetch(
-      "https://api.openai.com/v1/images/generations",
-      {
-        method:"POST",
-        headers:{
-          "Content-Type":`${SEC}`,
-          Authorization: `Bearer ${api_key}`,
-
-          "User-Agent":"Chrome"
-        },
-        body:JSON.stringify({
-          prompt:`${inputRef.current.value}`,
-          n:1,
-          size:"512x512",
-        }),
-
-      }
-     );
-
-     let data = await response.json();
-
-     let data_array = data.data;
-     setImage_url(data_array[0].url);
+    setImage_url();
      
      setLoading(false);
 

@@ -1,0 +1,24 @@
+
+     const response = await fetch(
+      "https://api.openai.com/v1/images/generations",
+      {
+        method:"POST",
+        headers:{
+          "Content-Type":'application/json',
+          Authorization: 'Bearer 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',
+
+          "User-Agent":"Chrome"
+        },
+        body:JSON.stringify({
+          prompt:`${inputRef.current.value}`,
+          n:1,
+          size:"512x512",
+        }),
+
+      }
+     );
+
+     let data = await response.json();
+
+     let data_array = data.data;
+     setImage_url(data_array[0].url);
